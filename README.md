@@ -1,95 +1,99 @@
+
+
 ---
 
-# Forest Fires Prediction and Analysis
+# Forest Fires Machine Learning Project
 
-This project focuses on analyzing and predicting forest fire behavior using machine learning techniques and environmental data.
+This project uses machine learning to **predict the Fire Weather Index (FWI)** based on environmental and weather features related to forest fires.
+
+FWI (Fire Weather Index) is a metric that estimates wildfire risk using weather conditions such as temperature, humidity, wind speed, and rainfall. ([Wikipedia][2])
 
 ## Project Overview
 
-Forest fires cause serious environmental and economic damage. This project uses historical forest fire data along with weather and environmental features to build machine learning models that help understand fire behavior and predict the extent of fire damage.
-
-The main objective is to train regression models to predict the **burned area** of forest fires based on input features such as temperature, humidity, wind speed, and weather indices.
+Forest fires are destructive and difficult to predict. This project trains regression models on historical fire and weather data so that, given environmental inputs, the system can estimate the FWI — a proxy for fire potential and severity.
 
 ## Dataset
 
-The dataset contains meteorological and environmental attributes related to forest fires, including:
+The dataset contains:
 
 * Temperature
 * Relative humidity
 * Wind speed
 * Rainfall
 * Fire weather indices (FFMC, DMC, DC, ISI)
-* Burned area (target variable)
+* Fire Weather Index (FWI) — target variable
 
-## Project Workflow
+The goal is to train a model that predicts FWI from the other features.
 
-1. Data loading and preprocessing
-2. Exploratory data analysis
-3. Feature scaling and transformation
-4. Model training using regression techniques
-5. Model evaluation and comparison
-6. Saving trained models for reuse
+## Machine Learning Pipeline
 
-## Machine Learning Models Used
+1. Load and preprocess data
+2. Perform exploratory data analysis
+3. Scale/standardize features
+4. Train regression models (e.g., Linear Regression, Lasso, Ridge, Elastic Net)
+5. Evaluate model performance
+6. Save the best trained model for inference
+
+## Models Used
 
 * Linear Regression
 * Ridge Regression
 * Lasso Regression
 * Elastic Net Regression
 
-Regularization techniques were applied to reduce overfitting and improve model generalization.
+Regularization techniques help reduce overfitting and improve prediction reliability.
 
-## Challenges Faced
+## Challenges and Solutions
 
-* Features had different scales, affecting model performance
-* Overfitting in basic regression models
-* Selecting the right evaluation metrics
+**Data scaling:**
+Features have different scales. Solution: feature standardization.
 
-## How Challenges Were Addressed
+**Model overfitting:**
+Linear regression alone can overfit. Solution: use regularized models like Ridge and Lasso.
 
-* Applied feature scaling using standardization
-* Used regularization methods (Ridge, Lasso, Elastic Net)
-* Performed cross-validation for model tuning and validation
+**Model validation:**
+Solution: use cross-validation to tune hyperparameters and evaluate performance.
 
-## Results
+## How to Run
 
-Regularized regression models performed more consistently than basic linear regression. The models helped identify important factors influencing forest fire behavior, such as temperature, humidity, and wind speed.
-
-## Technologies Used
-
-* Python
-* Pandas
-* NumPy
-* Scikit-learn
-* Matplotlib
-* Seaborn
-* Jupyter Notebook
-
-## How to Run the Project
-
-1. Clone the repository
+1. Clone the repository:
 
 ```bash
 git clone https://github.com/rohithsukka/forest-fires.git
 ```
 
-2. Install dependencies
+2. Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Run the notebooks or application file
+3. Run the application:
 
 ```bash
 python application.py
 ```
 
-## Key Learnings
+4. After the server starts, open your browser and go to:
 
-* Importance of data preprocessing and feature scaling
-* Practical understanding of regression and regularization
-* Model evaluation using real data behavior
-* Building an end-to-end machine learning workflow
+```
+http://localhost:5000/predicted
+```
 
+This will show the FWI predictions based on input variables.
 
+## Technologies Used
+
+* Python
+* pandas
+* NumPy
+* scikit-learn
+* Flask (for web app)
+* Matplotlib / Seaborn (for visualizations)
+
+## Outcome
+
+The trained regression model predicts the Fire Weather Index (FWI) given environmental inputs. This helps estimate forest fire risk based on current weather conditions.
+
+[1]: https://github.com/aravind-selvam/forest-fire-prediction?utm_source=chatgpt.com "aravind-selvam/forest-fire-prediction"
+[2]: https://en.wikipedia.org/wiki/Forest_fire_weather_index?utm_source=chatgpt.com "Forest fire weather index"
