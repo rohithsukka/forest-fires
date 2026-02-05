@@ -6,7 +6,7 @@
 
 This project uses machine learning to **predict the Fire Weather Index (FWI)** based on environmental and weather features related to forest fires.
 
-FWI (Fire Weather Index) is a metric that estimates wildfire risk using weather conditions such as temperature, humidity, wind speed, and rainfall. ([Wikipedia][2])
+FWI (Fire Weather Index) is a metric that estimates wildfire risk using weather conditions such as temperature, humidity, wind speed, and rainfall.
 
 ## Project Overview
 
@@ -77,7 +77,7 @@ python application.py
 4. After the server starts, open your browser and go to:
 
 ```
-http://localhost:5000/predicted
+http://localhost:5000/predictdata
 ```
 
 This will show the FWI predictions based on input variables.
@@ -94,6 +94,3 @@ This will show the FWI predictions based on input variables.
 ## Outcome
 
 The trained regression model predicts the Fire Weather Index (FWI) given environmental inputs. This helps estimate forest fire risk based on current weather conditions.
-
-[1]: https://github.com/aravind-selvam/forest-fire-prediction?utm_source=chatgpt.com "aravind-selvam/forest-fire-prediction"
-[2]: https://en.wikipedia.org/wiki/Forest_fire_weather_index?utm_source=chatgpt.com "Forest fire weather index"
